@@ -59,7 +59,10 @@ fun NavGrap(modifier: Modifier = Modifier) {
         }
 
         composable<NavUtils.PageTwo>(
-            typeMap = mapOf(typeOf<Person>() to PersonType)
+            typeMap = mapOf(typeOf<Person>() to CustomNavType<Person>(
+                Person::class,
+                Person.serializer()
+            ))
         ) {
             val args = it.toRoute<NavUtils.PageTwo>()
             PageTwo(args.person.course.nameOfCourse, args.person.age)
