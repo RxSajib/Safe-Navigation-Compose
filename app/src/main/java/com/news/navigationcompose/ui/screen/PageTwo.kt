@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 @Composable
 fun PageTwo(
     name : String,
-    age : Int
+    age : String
 ) {
     Box(
         modifier = Modifier.fillMaxSize(),
@@ -19,7 +19,7 @@ fun PageTwo(
     ){
         Button(onClick = {}) {
             Text(
-                text = "Name is $name age is $age"
+                text = "name is $name age is $age"
             )
         }
     }

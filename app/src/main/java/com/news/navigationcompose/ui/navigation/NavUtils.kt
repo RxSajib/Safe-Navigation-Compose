@@ -1,5 +1,6 @@
 package com.news.navigationcompose.ui.navigation
 
+import com.news.navigationcompose.ui.model.Person
 import kotlinx.serialization.Serializable
 
 sealed class NavUtils {
@@ -8,7 +9,7 @@ sealed class NavUtils {
     data object PageOne : NavUtils()
 
     @Serializable
-    data class PageTwo(val name : String, val age : Int) : NavUtils()
+    data class PageTwo(val person : Person) : NavUtils()
 
     @Serializable
     data object PageThree : NavUtils()
