@@ -8,10 +8,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.news.navigationcompose.ui.model.Course
+import com.news.navigationcompose.ui.model.Person
 
 @Composable
 fun ScreenOne(
-    onclick: () -> Unit
+    onclick: (Person) -> Unit
 ) {
     Box(
         modifier = Modifier.fillMaxSize(),
@@ -21,7 +23,15 @@ fun ScreenOne(
             Text(
                 text = "Page One",
                 modifier = Modifier.clickable {
-                    onclick.invoke()
+                    onclick.invoke(Person(
+                        name = "Sajib Roy",
+                        age = "25",
+                        details = "This is the details",
+                        course = Course(
+                            nameOfCourse = "CSE",
+                            major = "CSE"
+                        )
+                    ))
                 }
             )
         }
